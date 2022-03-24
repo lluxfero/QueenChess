@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <clocale>
 #include <Windows.h>
 #include <stdio.h>
@@ -33,7 +33,7 @@ int err_n() {
 
 void set_occ(int** D, int n, int x, int y) {
     if (D[x][y] == 0) {
-        for (int i = 0; i < 8; ++i) {
+        for (int i = 0; i < n; ++i) {
             if (D[i][y] == 0) D[i][y] = k;
             if (D[x][i] == 0) D[x][i] = k;
             int f;
@@ -49,7 +49,7 @@ void set_occ(int** D, int n, int x, int y) {
 
 void delete_occ(int** D, int n, int x, int y) {
     if (D[x][y] == k - 1) {
-        for (int i = 0; i < 8; ++i) {
+        for (int i = 0; i < n; ++i) {
             if (D[i][y] == k - 1) D[i][y] = 0;
             if (D[x][i] == k - 1) D[x][i] = 0;
             int f;
